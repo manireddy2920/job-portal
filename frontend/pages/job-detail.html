@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Detail – JobPortal</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/job-detail.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">Job<span>Portal</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/pages/jobs.html">Browse Jobs</a></li>
+        <li id="navSeekerDash" style="display:none"><a href="/pages/seeker-dashboard.html">My Applications</a></li>
+        <li id="navEmployerDash" style="display:none"><a href="/pages/employer-dashboard.html">Dashboard</a></li>
+        <li id="navProfile" style="display:none"><a href="/pages/profile.html">Profile</a></li>
+        <li id="navLogin"><a href="/pages/login.html" class="btn btn-outline btn-sm">Log In</a></li>
+        <li id="navRegister"><a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+        <li id="navLogout" style="display:none"><a href="#" class="btn btn-outline btn-sm" id="logoutBtn">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container job-detail-page" id="jobDetailPage">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Apply Modal -->
+  <div class="modal-overlay hidden" id="applyModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Apply for <span id="applyJobTitle"></span></h2>
+        <button class="modal-close" id="closeApplyModal">&times;</button>
+      </div>
+      <div id="applyAlert" class="alert hidden"></div>
+      <form id="applyForm">
+        <div class="form-group">
+          <label for="coverLetter">Cover Letter <small>(optional)</small></label>
+          <textarea id="coverLetter" rows="6"
+            placeholder="Introduce yourself and explain why you're a great fit…"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelApply">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitApplyBtn">
+            <span id="applyBtnText">Submit Application</span>
+            <span id="applySpinner" class="btn-spinner hidden"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/job-detail.js"></script>
+</body>
+</html>

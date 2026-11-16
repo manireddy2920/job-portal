@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Jobs – JobPortal</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/jobs.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">Job<span>Portal</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/pages/jobs.html" class="active">Browse Jobs</a></li>
+        <li id="navSeekerDash" style="display:none"><a href="/pages/seeker-dashboard.html">My Applications</a></li>
+        <li id="navEmployerDash" style="display:none"><a href="/pages/employer-dashboard.html">Dashboard</a></li>
+        <li id="navProfile" style="display:none"><a href="/pages/profile.html">Profile</a></li>
+        <li id="navLogin"><a href="/pages/login.html" class="btn btn-outline btn-sm">Log In</a></li>
+        <li id="navRegister"><a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+        <li id="navLogout" style="display:none"><a href="#" class="btn btn-outline btn-sm" id="logoutBtn">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jobs-page">
+    <!-- SIDEBAR FILTERS -->
+    <aside class="filters-sidebar" id="filtersSidebar">
+      <div class="filters-header">
+        <h3>Filters</h3>
+        <button class="btn-link" id="clearFilters">Clear all</button>
+      </div>
+
+      <div class="filter-group">
+        <label>Job Type</label>
+        <label class="checkbox-label"><input type="checkbox" name="job_type" value="full-time" /> Full-time</label>
+        <label class="checkbox-label"><input type="checkbox" name="job_type" value="part-time" /> Part-time</label>
+        <label class="checkbox-label"><input type="checkbox" name="job_type" value="contract" /> Contract</label>
+        <label class="checkbox-label"><input type="checkbox" name="job_type" value="internship" /> Internship</label>
+        <label class="checkbox-label"><input type="checkbox" name="job_type" value="remote" /> Remote</label>
+      </div>
+
+      <div class="filter-group">
+        <label>Category</label>
+        <input type="text" id="filterCategory" placeholder="e.g. Engineering" />
+      </div>
+
+      <div class="filter-group">
+        <label>Minimum Salary ($)</label>
+        <input type="number" id="filterSalaryMin" placeholder="e.g. 50000" min="0" step="5000" />
+      </div>
+
+      <button class="btn btn-primary btn-full" id="applyFiltersBtn">Apply Filters</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="jobs-main">
+      <!-- Search bar -->
+      <div class="jobs-search-bar">
+        <input type="text" id="searchKeyword" placeholder="Job title, skill, or company" />
+        <input type="text" id="searchLocation" placeholder="Location" />
+        <button class="btn btn-primary" id="searchBtn">Search</button>
+        <button class="btn btn-outline filters-toggle-btn" id="filtersToggleBtn">⚙ Filters</button>
+      </div>
+
+      <div class="jobs-results-header">
+        <span id="resultsCount">Loading…</span>
+        <select id="sortBy">
+          <option value="newest">Newest first</option>
+        </select>
+      </div>
+
+      <div id="jobsList" class="jobs-list">
+        <div class="loading-spinner"></div>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/jobs.js"></script>
+</body>
+</html>

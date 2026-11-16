@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In – JobPortal</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">Job<span>Portal</span></a>
+      <ul class="nav-links">
+        <li><a href="/pages/jobs.html">Browse Jobs</a></li>
+        <li><a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="auth-sub">Log in to your JobPortal account</p>
+
+      <div id="authAlert" class="alert hidden"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <span class="field-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-icon-wrap">
+            <input type="password" id="password" name="password" placeholder="••••••••" required />
+            <button type="button" class="toggle-pw" id="togglePw">👁</button>
+          </div>
+          <span class="field-error" id="passwordError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="loginBtn">
+          <span id="loginBtnText">Log In</span>
+          <span id="loginSpinner" class="btn-spinner hidden"></span>
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Don't have an account? <a href="/pages/register.html">Sign up free</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

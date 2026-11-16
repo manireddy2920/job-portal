@@ -1,0 +1,83 @@
+.profile-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: start;
+  min-height: calc(100vh - 60px);
+}
+
+.profile-sidebar {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: sticky;
+  top: 76px;
+}
+.profile-avatar-lg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--brand-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--brand);
+  margin: 0 auto 1rem;
+}
+.profile-sidebar h2 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+.profile-role { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; }
+.profile-headline { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; font-style: italic; }
+.profile-info-list { text-align: left; font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+.profile-info-item { display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); }
+.profile-info-item a { color: var(--brand); }
+
+.profile-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.profile-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.profile-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--brand-light);
+  color: var(--brand);
+}
+
+.skills-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tag {
+  background: var(--brand-light);
+  color: var(--brand);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.exp-entry, .edu-entry {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  color: var(--text);
+}
+.exp-entry:last-child, .edu-entry:last-child { border-bottom: none; }
+
+@media (max-width: 768px) {
+  .profile-page { grid-template-columns: 1fr; }
+  .profile-sidebar { position: static; }
+}

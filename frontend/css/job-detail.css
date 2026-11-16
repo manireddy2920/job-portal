@@ -1,0 +1,93 @@
+.job-detail-page {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: start;
+}
+
+/* ── Main content ───────────────────────────────────────── */
+.jd-main {}
+
+.jd-header {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.jd-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+.jd-title-block h1 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+.jd-company { font-size: 0.95rem; color: var(--text-muted); }
+.jd-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+
+.jd-section { margin-bottom: 2rem; }
+.jd-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--brand-light);
+  color: var(--brand);
+}
+.jd-body {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+/* ── Sidebar card ───────────────────────────────────────── */
+.jd-sidebar {}
+.jd-apply-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 76px;
+}
+.jd-apply-card h3 { margin-bottom: 1rem; font-size: 1rem; }
+.jd-detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.jd-detail-row:last-of-type { border-bottom: none; }
+.jd-detail-row span:first-child { color: var(--text-muted); }
+.jd-detail-row span:last-child { font-weight: 600; }
+.jd-apply-btn-wrap { margin-top: 1.25rem; }
+
+/* ── Company card ───────────────────────────────────────── */
+.jd-company-card {
+  background: var(--brand-light);
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+.jd-company-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+.jd-company-card p { font-size: 0.875rem; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .job-detail-page {
+    grid-template-columns: 1fr;
+  }
+  .jd-apply-card { position: static; }
+}
