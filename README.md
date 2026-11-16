@@ -98,7 +98,7 @@ job-portal/
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/job-portal.git
+git clone https://github.com/manireddy2920/job-portal.git
 cd job-portal
 
 # Install dependencies
