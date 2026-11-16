@@ -7,8 +7,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ── Middleware ──────────────────────────────────────────────────────────────
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',')
+  : ['http://localhost:3000', 'http://127.0.0.1:3000'];
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+  origin: (origin, cb) => {
+    // Allow requests with no origin (mobile apps, curl, same-origin)
+    if (!origin) return cb(null, true);
+    if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) return cb(null, true);
+    cb(new Error(`CORS: ${origin} not allowed`));
+  },
   credentials: true,
 }));
 app.use(express.json());

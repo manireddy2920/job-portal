@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: job-portal
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: node backend/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /data/jobportal.db
+      - key: ALLOWED_ORIGINS
+        value: "*"
+    disk:
+      name: job-portal-data
+      mountPath: /data
+      sizeGB: 1

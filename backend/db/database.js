@@ -4,7 +4,9 @@ const fs = require('fs');
 // Use a file-backed SQLite via sql.js with fs persistence
 let SQL;
 let db;
-const DB_PATH = path.join(__dirname, 'jobportal.db');
+// In production (Render), DB_PATH env var points to the persistent disk mount.
+// Locally it falls back to the db/ directory.
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'jobportal.db');
 
 function getDb() {
   if (db) return db;
