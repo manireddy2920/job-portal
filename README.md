@@ -2,7 +2,10 @@
 
 An open-source job portal connecting job seekers with employers. Built with Node.js, Express, SQLite (sql.js), and vanilla HTML/CSS/JavaScript.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-job--portal--z3ow.onrender.com-brightgreen)](https://job-portal-z3ow.onrender.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+> 🌐 **Live Demo:** [https://job-portal-z3ow.onrender.com](https://job-portal-z3ow.onrender.com)
 
 ---
 
